@@ -43,7 +43,7 @@ define([
     });
 
     this.$search.on('keyup input', function (evt) {
-      if (evt.ctrlKey || evt.altKey || evt.key === 'Alt' || evt.key === 'Control' || evt.key === 'Tab' || evt.key === 'Shift' || (evt.key && evt.key.length === 2 && evt.key[0] === 'F')) {
+      if (evt.ctrlKey || evt.altKey || evt.key === 'Alt' || evt.key === 'Control' || evt.key === 'Tab' || evt.key === 'Shift' || (evt.key && (evt.key.length === 2 || evt.key.length === 3) && evt.key[0] === 'F')) {
         // do not trigger search on these keys
         return;
       }

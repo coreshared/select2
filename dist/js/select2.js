@@ -943,7 +943,7 @@ S2.define('select2/results',[
     var option;
     var append = false;
     if (data.children) {
-      option = $(".select2-results__option[aria-label='" + data.text + "']")[0];
+      option = $(".select2-results__option[aria-label='" + data.text.replace("\'",'&#39;') + "']")[0];
       if ($(option).length !== 0) {
         append = true;
       }

@@ -3,6 +3,7 @@ define([
 ], function ($) {
   function InfiniteScroll (decorated, $element, options, dataAdapter) {
     this.lastParams = {};
+    this.requestCount = 0; // for ability to limit requests to avoid infinite loop
 
     decorated.call(this, $element, options, dataAdapter);
 
@@ -18,6 +19,15 @@ define([
 
     if (this.showLoadingMore(data)) {
       this.$results.append(this.$loadingMore);
+
+      if (data.pagination && data.pagination.more && data.results.length === 0 && this.requestCount < 50) {
+        var params = $.extend({}, this.lastParams);
+        params.page++;
+        this.requestCount++;
+        this.trigger('query:append', params);
+      } else {
+        this.requestCount = 0;
+      }
     }
   };
 

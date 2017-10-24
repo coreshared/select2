@@ -4086,8 +4086,11 @@ S2.define('select2/dropdown/infiniteScroll',[
     if (this.showLoadingMore(data)) {
       this.$results.append(this.$loadingMore);
 
-      if (data.pagination && data.pagination.more && data.results.length === 0 && this.requestCount < 50) {
+      if (data.pagination && data.pagination.more && data.results.length === 0 && this.requestCount < 200) {
         var params = $.extend({}, this.lastParams);
+        if (data.minPage && data.minPage > params.page) {
+          params.page = data.minPage;
+        }
         params.page++;
         this.requestCount++;
         this.trigger('query:append', params);

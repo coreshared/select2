@@ -47,7 +47,8 @@ define([
 
     for (var d = 0; d < data.length; d++) {
       var unselectData = {
-        data: data[d]
+        data: data[d],
+        clearButton: true
       };
 
       // Trigger the `unselect` event, so people can prevent it from being

@@ -43,12 +43,10 @@ define([
     });
 
     this.$search.on('keyup input', function (evt) {
-      if (evt.ctrlKey || evt.altKey ||
-          evt.key === 'Alt' || evt.key === 'Control' || evt.key === 'Shift' ||
-          evt.key === 'Tab' ||
-          evt.key === 'Home' || evt.key === 'End' || evt.key === 'PageUp' || evt.key === 'PageDown' || evt.key === 'Insert' || evt.key === 'Delete' ||
-          (evt.key && (evt.key.length === 2 || evt.key.length === 3) && evt.key[0] === 'F')) {
-        // do not trigger search on these keys
+      if (evt.key) {
+        // For some reason on the very first input, event raised also for non valid chars (tab, delete, end, F12, esc, backspace, etc). 
+        // And evt.key in this case is filled with corresponding char. We should just ignore this event.
+        // If valid key triggered, evt.key is always undefined.
         return;
       }
       self.handleSearch(evt);

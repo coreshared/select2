@@ -5409,28 +5409,28 @@ S2.define('select2/core',[
 
           evt.preventDefault();
         } else if (key === KEYS.ENTER) {
-          self.trigger('results:select', {});
+          //self.trigger('results:select', {});
 
-          evt.preventDefault();
+          //evt.preventDefault();
         } else if ((key === KEYS.SPACE && evt.ctrlKey)) {
-          self.trigger('results:toggle', {});
+          //self.trigger('results:toggle', {});
 
-          evt.preventDefault();
+          //evt.preventDefault();
         } else if (key === KEYS.UP) {
-          self.trigger('results:previous', {});
+          //self.trigger('results:previous', {});
 
-          evt.preventDefault();
+          //evt.preventDefault();
         } else if (key === KEYS.DOWN) {
-          self.trigger('results:next', {});
+          //self.trigger('results:next', {});
 
-          evt.preventDefault();
+          //evt.preventDefault();
         }
       } else {
         if (key === KEYS.ENTER || key === KEYS.SPACE ||
             (key === KEYS.DOWN && evt.altKey)) {
-          self.open();
+          //self.open();
 
-          evt.preventDefault();
+          //evt.preventDefault();
         }
       }
     });

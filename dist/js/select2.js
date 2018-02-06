@@ -1290,7 +1290,7 @@ S2.define('select2/results',[
 
     if (currentIndex <= 2) {
       this.$results.scrollTop(0);
-    } else if (offsetDelta > this.$results.outerHeight() || offsetDelta < 0) {
+    } else if (offsetDelta >= this.$results.outerHeight() || offsetDelta < 0) {
       this.$results.scrollTop(nextOffset);
     }
   };

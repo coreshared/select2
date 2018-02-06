@@ -517,7 +517,7 @@ define([
 
     if (currentIndex <= 2) {
       this.$results.scrollTop(0);
-    } else if (offsetDelta > this.$results.outerHeight() || offsetDelta < 0) {
+    } else if (offsetDelta >= this.$results.outerHeight() || offsetDelta < 0) {
       this.$results.scrollTop(nextOffset);
     }
   };

@@ -69,10 +69,8 @@ define([
     });
 
     container.on('focus', function () {
-      if (container.isOpen()) {
-        if (!self.$searchContainer.hasClass('select2-search--hide')) {
-          self.$search.focus();
-        }
+      if (!container.isOpen()) {
+        self.$search.focus();
       }
     });
 

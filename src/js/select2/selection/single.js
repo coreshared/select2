@@ -55,9 +55,9 @@ define([
     });
 
     container.on('focus', function (evt) {
-      if (!container.isOpen()) {
+      //if (!container.isOpen()) {
         self.$selection.focus();
-      }
+      //}
     });
 
     container.on('selection:update', function (params) {

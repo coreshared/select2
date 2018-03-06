@@ -35,7 +35,7 @@
     "src",
     "dist"
   ],
-  "version": "4.0.3-rbm011",
+  "version": "4.0.3-rbm012",
   "jspm": {
     "main": "js/select2",
     "directories": {

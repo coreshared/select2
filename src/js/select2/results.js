@@ -170,7 +170,7 @@ define([
     var option;
     var append = false;
     if (data.children) {
-      option = $(".select2-results__option[aria-label='" + data.text.replace("\'",'&#39;') + "']")[0];
+      option = $(".select2-results__option[aria-label='" + data.text.replace(/'/gi,'&#39;') + "']")[0];
       if ($(option).length !== 0) {
         append = true;
       }

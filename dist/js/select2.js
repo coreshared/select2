@@ -943,7 +943,7 @@ S2.define('select2/results',[
     var option;
     var append = false;
     if (data.children) {
-      option = $(".select2-results__option[aria-label='" + data.text.replace("\'",'&#39;') + "']")[0];
+      option = $(".select2-results__option[aria-label='" + data.text.replace(/'/gi,'&#39;') + "']")[0];
       if ($(option).length !== 0) {
         append = true;
       }
@@ -3958,7 +3958,7 @@ S2.define('select2/dropdown/search',[
 
     this.$search.on('keyup input', function (evt) {
       if (evt.key) {
-        // For some reason on the very first input, event raised also for non valid chars (tab, delete, end, F12, esc, backspace, etc). 
+        // For some reason on the very first input, event raised also for non valid chars (tab, delete, end, F12, esc, backspace, etc).
         // And evt.key in this case is filled with corresponding char. We should just ignore this event.
         // If valid key triggered, evt.key is always undefined.
         return;
